@@ -1,3 +1,6 @@
+.PHONY:
+.SILENT:
+.DEFAULT_GOAL := generate
 
 install-deps:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1
