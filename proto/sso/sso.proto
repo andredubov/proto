@@ -18,13 +18,13 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
-  int64 user_id = 1;            // User ID of the registered user.
+  string user_id = 1;            // User ID of the registered user.
 }
 
 message LoginRequest {
   string email = 1;             // Email of the user to login.
   string password = 2;          // Password of the user to login.
-  int32 app_id = 3;             // ID of the app to login to.
+  string app_id = 3;            // ID of the app to login to.
 }
 
 message LoginResponse {
@@ -40,9 +40,9 @@ message LogoutResponse {
 }
 
 message IsAdminRequest {
-    int64 user_id = 1;          // User ID to validate.
-  }
-  
-  message IsAdminResponse {
-    bool is_admin = 1;          // Indicates whether the user is an admin.
-  }
+  string user_id = 1;          // User ID to validate.
+}
+
+message IsAdminResponse {
+  bool is_admin = 1;          // Indicates whether the user is an admin.
+}
