@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package apps;
+
+option go_package = "andredubov.sso.v1;ssov1";
+
+// Apps is service for managing authentication apps
+service Apps {
+  rpc Create (CreateRequest) returns (CreateResponse);
+}
+
+message CreateRequest {
+  string app_name = 1;             // app's name
+  string app_secret = 2;           // app's jwt token signing key
+}
+
+message CreateResponse {
+  string app_id = 1;            // User ID of the registered user.
+}
