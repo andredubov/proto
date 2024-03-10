@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package apps;
 
-option go_package = "andredubov.sso.v1;ssov1";
+option go_package = "andredubov.sso.v2;ssov2";
 
 // Apps is service for managing authentication apps
 service Apps {
