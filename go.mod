@@ -1,4 +1,4 @@
-module github.com/andredubov/protos
+module github.com/andredubov/protos/v2
 
 go 1.21.5
 
