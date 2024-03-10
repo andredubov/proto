@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "andredubov.sso.v1;ssov1";
+
+// Auth is service for managing users authentication
+service Auth {
+  rpc SignUp (SignUpRequest) returns (SignUpResponse);
+  rpc SignIn (SignInRequest) returns (SignInResponse);
+  rpc SignOut (SignOutRequest) returns (SignOutResponse);
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+message SignUpRequest {
+  string email = 1;             // Email of the user to register.
+  string password = 2;          // Password of the user to register.
+}
+
+message SignUpResponse {
+  string user_id = 1;            // User ID of the registered user.
+}
+
+message SignInRequest {
+  string email = 1;             // Email of the user to login.
+  string password = 2;          // Password of the user to login.
+  string app_id = 3;            // ID of the app to login to.
+}
+
+message SignInResponse {
+  string token = 1;             // Auth token of the logged in user.
+}
+
+message SignOutRequest {
+  string token = 1;             // Auth token of the user to logout.
+}
+
+message SignOutResponse {
+  bool success = 1;             // Indicates whether the logout was successful.
+}
+
+message IsAdminRequest {
+  string user_id = 1;          // User ID to validate.
+}
+
+message IsAdminResponse {
+  bool is_admin = 1;          // Indicates whether the user is an admin.
+}
